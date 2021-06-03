@@ -1,0 +1,25 @@
+name: "register api"
+base_url: ${ENV(URL)}
+#variables:
+#    csrf_token: $csrf_token
+
+request:
+    url: /phpwind/index.php
+    method: POST
+    headers:
+      Content-Type: "application/x-www-form-urlencoded"
+
+    params:
+      m: u
+      c: register
+      a: dorun
+
+    data:
+      username: yang05097221
+      password: yang05097221
+      repassword: yang05097221
+      email: yang05097221@qq.com
+      csrf_token: $csrf_token
+
+validate:
+    - eq: ['status_code',200]

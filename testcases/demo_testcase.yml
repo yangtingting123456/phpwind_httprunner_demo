@@ -3,8 +3,8 @@ config:
     name: "demo testcase"
     variables:
         device_sn: "ABC"
-        username: ${ENV(USERNAME)}
-        password: ${ENV(PASSWORD)}
+#        username: ${ENV(USERNAME)}
+#        password: ${ENV(PASSWORD)}
     base_url: "http://127.0.0.1:5000"
 
 teststeps:

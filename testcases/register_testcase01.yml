@@ -1,0 +1,20 @@
+- config:
+    name: "从test_get_csrf_token.yml中获取csrf_token进行注册"
+    bese_url: ${ENV(URL)}
+
+- test:
+    name: "exec 从test_get_csrf_token.yml"
+    testcase: "testcases/test_get_csrf_token.yml"
+
+- test:
+    name: "register user"
+    api: "api/register_api.yml"
+    setup_hooks:
+      - ${setup_step(注册)}
+    teardown_hooks:
+      - ${teardown_step(注册)}
+    variables:
+      csrf_token: $csrf_token
+
+    validate:
+      - eq: ['status_code',200]

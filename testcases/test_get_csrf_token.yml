@@ -1,0 +1,22 @@
+- config:
+    name: "get csrf_token"
+    export:
+      - csrf_token
+    base_url: ${ENV(URL)}
+    setup_hooks:
+      - ${setup_case(获取csrf_token)}
+    teardown_hooks:
+      - ${teardown_case(获取csrf_token)}
+
+- test:
+    name: "exec api/csrf_token_api.yml"
+    setup_hooks:
+      - ${setup_step(获取csrf_token)}
+    teardown_hooks:
+      - ${teardown_step(获取csrf_token)}
+    api: "api/csrf_token_api.yml"
+    extract:
+      - csrf_token: '<input type="hidden" name="csrf_token" value="(.+?)"/>'
+
+    validate:
+      - eq: ['status_code',200]

@@ -1,0 +1,15 @@
+name: "register success 跳转"
+base_url: ${ENV(URL)}
+
+request:
+    url: /phpwind/index.php
+    method: GET
+    params:
+      m: u
+      c: register
+      a: welcome
+      _statu: n%2FgJvJusdnYce2ZaFRYxoZ%2FbY8okDa91KCwXO8%2FZ9ASxd%2BcQNELlZFg9iEE%3D
+
+
+validate:
+    - eq: ['status_code',200]
