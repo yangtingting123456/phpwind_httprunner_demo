@@ -15,10 +15,10 @@ request:
       a: dorun
 
     data:
-      username: yang05097221
-      password: yang05097221
-      repassword: yang05097221
-      email: yang05097221@qq.com
+      username: $uname
+      password: $password
+      repassword: $repassword
+      email: $email
       csrf_token: $csrf_token
 
 validate:

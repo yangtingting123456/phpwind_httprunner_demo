@@ -1,0 +1,103 @@
+- config:
+    name: "从test_get_csrf_token.yml中获取csrf_token进行注册"
+    bese_url: ${ENV(URL)}
+
+- test:
+    name: "exec 从test_get_csrf_token.yml"
+    testcase: "testcases/homework_0530/test_get_csrf_token.yml"
+
+- test:
+    name: "register user 01 注册参数1"
+    api: "api/register_api.yml"
+    parameters:
+      uname: ting2143
+      password: ting2143
+      repassword: ting2143
+      email: ting2143@qq.com
+    setup_hooks:
+      - ${setup_step(注册)}
+    teardown_hooks:
+      - ${teardown_step(注册)}
+    variables:
+      csrf_token: $csrf_token
+
+    validate:
+      - eq: ['status_code',200]
+
+#- test:
+#    name: "register user 01"
+#    api: "api/register_api.yml"
+#    setup_hooks:
+#      - ${setup_step(注册)}
+#    teardown_hooks:
+#      - ${teardown_step(注册)}
+#    variables:
+#      csrf_token: $csrf_token
+#
+#    validate:
+#      - eq: ['status_code',200]
+#
+#- test:
+#    name: "register user 02"
+#    api: "api/register_api.yml"
+#    setup_hooks:
+#      - ${setup_step(注册)}
+#    teardown_hooks:
+#      - ${teardown_step(注册)}
+#    variables:
+#      csrf_token: $csrf_token
+#
+#    validate:
+#      - eq: ['status_code',200]
+#
+#- test:
+#    name: "register user 03"
+#    api: "api/register_api.yml"
+#    setup_hooks:
+#      - ${setup_step(注册)}
+#    teardown_hooks:
+#      - ${teardown_step(注册)}
+#    variables:
+#      csrf_token: $csrf_token
+#
+#    validate:
+#      - eq: ['status_code',200]
+#
+#- test:
+#    name: "register user 04"
+#    api: "api/register_api.yml"
+#    setup_hooks:
+#      - ${setup_step(注册)}
+#    teardown_hooks:
+#      - ${teardown_step(注册)}
+#    variables:
+#      csrf_token: $csrf_token
+#
+#    validate:
+#      - eq: ['status_code',200]
+#
+#- test:
+#    name: "register user 05"
+#    api: "api/register_api.yml"
+#    setup_hooks:
+#      - ${setup_step(注册)}
+#    teardown_hooks:
+#      - ${teardown_step(注册)}
+#    variables:
+#      csrf_token: $csrf_token
+#
+#    validate:
+#      - eq: ['status_code',200]
+#
+#- test:
+#    name: "register user 06"
+#    api: "api/register_api.yml"
+#    setup_hooks:
+#      - ${setup_step(注册)}
+#    teardown_hooks:
+#      - ${teardown_step(注册)}
+#    variables:
+#      csrf_token: $csrf_token
+#
+#    validate:
+#      - eq: ['status_code',200]

@@ -1,0 +1,6 @@
+config:
+  name: "testsuit0530_01"
+
+testcases:
+  - name: "homework_0530"
+    testcase: "testcases/homework_0530/register_testcase01.yml"
