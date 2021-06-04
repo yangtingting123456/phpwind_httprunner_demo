@@ -1,0 +1,8 @@
+config:
+  name: "testsuit0530_02"
+
+testcases:
+  - name: "homework_0530_2"
+    testcase: "testcases/homework_0530/register_testcase02.yml"
+    parameters:
+      username-password-repassword-email: [['kkku2123','kkk2u123','kkku2123','kkku1223@qq.com']]

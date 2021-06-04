@@ -9,22 +9,16 @@
 - test:
     name: "register user 01 注册参数1"
     api: "api/register_api.yml"
-#    skip: 该测试用例不执行
-#    parameters:
-#      username: ting2143
-#      password: ting2143
-#      repassword: ting2143
-#      email: ting2143@qq.com
     setup_hooks:
       - ${setup_step(注册)}
     teardown_hooks:
       - ${teardown_step(注册)}
     variables:
       csrf_token: $csrf_token
-      username: ting2143
-      password: ting2143
-      repassword: ting2143
-      email: ting2143@qq.com
+      username: $username
+      password: $password
+      repassword: $repassword
+      email: $email
 
     validate:
       - eq: ['status_code',200]
