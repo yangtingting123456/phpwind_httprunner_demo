@@ -1,0 +1,7 @@
+config:
+  name: "testsuit0530_05之Faker参数化"
+
+testcases:
+  - name: "homework_0530_5"
+    testcase: "testcases/homework_0530/register_testcase05.yml"
+

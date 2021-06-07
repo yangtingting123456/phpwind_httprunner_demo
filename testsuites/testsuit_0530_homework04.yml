@@ -1,0 +1,8 @@
+config:
+  name: "testsuit0530_04之csv参数化"
+
+testcases:
+  - name: "homework_0530_2"
+    testcase: "testcases/homework_0530/register_testcase04.yml"
+    parameters:
+      username-password-repassword-email: ${P(data/register_info.csv)}

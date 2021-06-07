@@ -1,0 +1,7 @@
+config:
+  name: "testsuit0530_06之数据库参数化"
+
+testcases:
+  - name: "homework_0530_6"
+    testcase: "testcases/homework_0530/register_testcase06.yml"
+
